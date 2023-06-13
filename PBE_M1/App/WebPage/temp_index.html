@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form to JSON</title>
+</head>
+<body>
+  <h1>Form to JSON</h1>
+
+  <form action="/submit" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Optionally, you can use jQuery to send the form data as JSON
+    $('form').submit(function(event) {
+      event.preventDefault();
+      const formData = $(this).serializeArray();
+      const jsonData = JSON.stringify(Object.fromEntries(formData));
+
+      $.ajax({
+        type: 'POST',
+        url: '/submit',
+        data: jsonData,
+        contentType: 'application/json',
+        success: function(response) {
+          console.log(response); // Display the JSON response in the console
+        },
+      });
+    });
+  </script>
+</body>
+</html>

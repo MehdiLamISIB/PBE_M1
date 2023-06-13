@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Configuration du robot</title>
+  </head>
+  <body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Menu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Page d'accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/form">Configuration du robot</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+        
+	<div class="mx-auto" style="width:600px">
+	  <h1>Configuration du robot</h1>
+	</div>
+	
+      <div class="mx-auto" style="width:600px">
+	
+	
+		
+	<form method="post">
+	
+	
+	  
+	  <div class="mb-3">
+	      <label for="exampleInputPassword1" class="form-label">Nom</label>
+	      <input type="text" class="form-control" id="nom" name="nom">
+	      <div id="emailHelp" class="form-text">Ton nom pour que le robot puisse te dire bonjour !</div>
+		    <div class="col-auto">
+	      </div>
+	  </div>
+	    
+	    
+	    
+	    
+	  <div class="mb-3">
+	      <label for="exampleInputPassword1" class="form-label">Email</label>
+	      <input type="text" class="form-control" id="mail" name="mail">
+	      <div id="emailHelp" class="form-text">Si tu veux bien sûr !!!!</div>
+		    <div class="col-auto">
+	      </div>
+	  </div>
+	  
+	  
+	  <div class="distance"></div>
+	  <div class="mb-3">
+	    <label for="customRange3" class="form-label">Distance de détection [5-30] avec pas de 5 : <output id="showValRange">17</output> </label>
+	    <input type="range" class="form-range" min="5" max="30" step="1" id="distance" name="distance" oninput="showValRange.value=distance.value">
+	  </div>
+	    <!--
+	    <div class="mb-3 form-check">
+	      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+	      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+	    </di
+	    -->
+
+	    <div class="mb-3">
+	      <label for="Select" class="form-label">Mouvement des oreilles</label>
+	      <select id="data3" name="mouvement" class="form-select">
+		<option>Lineaire</option>
+		<option>Sinus</option>
+		<option>Cosinus</option>
+	      </select>
+	    </div>
+
+
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	  
+	</form>
+	
+	
+	
+	
+      </div>
+	
+  
+  </body>
+</html>
