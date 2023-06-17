@@ -73,8 +73,7 @@ def show_json_new_data(data):
 
 
 
-init_newsAPI()
-
+#init_newsAPI()
 
 
 

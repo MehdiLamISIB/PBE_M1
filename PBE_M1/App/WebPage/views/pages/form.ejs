@@ -70,16 +70,11 @@
 	    <label for="customRange3" class="form-label">Distance de détection [5-30] avec pas de 5 : <output id="showValRange">17</output> </label>
 	    <input type="range" class="form-range" min="5" max="30" step="1" id="distance" name="distance" oninput="showValRange.value=distance.value">
 	  </div>
-	    <!--
-	    <div class="mb-3 form-check">
-	      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-	      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-	    </di
-	    -->
+
 
 	    <div class="mb-3">
 	      <label for="Select" class="form-label">Mouvement des oreilles</label>
-	      <select id="data3" name="mouvement" class="form-select">
+	      <select id="mouvement" name="mouvement" class="form-select">
 		<option>Lineaire</option>
 		<option>Sinus</option>
 		<option>Cosinus</option>
@@ -87,6 +82,43 @@
 	    </div>
 
 
+
+
+	    <div class="mb-3">
+	      <label for="Select" class="form-label">Désactiver</label>
+	      <select id="hibernate" name="hibernate" class="form-select">
+		<option>non</option>
+		<option>oui</option>
+	      </select>
+	    </div>
+
+	    <div class="mb-3">
+	      <label for="Select" class="form-label">Arrêter le robot !!!!</label>
+	      <select id="stop" name="stop" class="form-select">
+		<option>non</option>
+		<option>oui</option>
+	      </select>
+	    </div>
+
+
+
+	    <!--
+	    
+	    
+	    
+	    <div class="mb-3 form-check">
+	      <input type="checkbox" class="form-check-input" id="hibernate" name="hibernate">
+	      <label class="form-check-label" for="exampleCheck1">Désactiver</label>
+	    </div>
+	    
+	    
+	    
+	    <div class="mb-3 form-check">
+	      <input type="checkbox" class="form-check-input" id="stop" name="stop">
+	      <label class="form-check-label" for="exampleCheck1">Stop the robot !!!!!!</label>
+	    </div>
+	    
+	    -->
 	  <button type="submit" class="btn btn-primary">Submit</button>
 	  
 	</form>
