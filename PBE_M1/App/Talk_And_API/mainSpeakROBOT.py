@@ -23,9 +23,13 @@ import json
 user_name="Personne"
 
 list_news=None
+servo=None
 apiNews=None
 isNews=False
 isStop=False
+
+
+stop_count=0
 
 r = sr.Recognizer()
 def get_input():
@@ -70,6 +74,7 @@ def respond(output_text):
 # mainloop
 #while True:
 def VoiceDialogue():
+    global stop_count
     input_text = get_input()
     print(f"voici ce qui a été dit ---> {input_text}")
     if input_text.lower() == "bonjour":
@@ -96,7 +101,23 @@ def VoiceDialogue():
         respond("Au revoir ! Bonne journée à vous")
         ##### Variable
         return True
-        isStop=True
+    elif input_text.lower()=="désactivation":
+        respond("Je vais me désactivé et être en mode économie de ressource, pour me réactiver approcher vous")
+        return True
+    elif input_text.lower()=="stop":
+        stop_count=stop_count+1
+        if(stop_count==2):
+            respond("D'accord je vais m'arreter")
+            servo.ZigZagMove()
+            servo.CalibrationMove()
+            servo.HelloMove()
+            servo.CalibrationMove()
+            servo.OneOneMove()
+            servo.CalibrationMove()
+            stop_count=0
+        servo.ZigZagMove()
+        servo.CalibrationMove()
+        respond("Êtes vous sûr ?")
     elif "qu'est-ce que" in input_text.lower():
         txt=input_text.lower().replace("Qu'est ce que","")
         txt=txt.strip()

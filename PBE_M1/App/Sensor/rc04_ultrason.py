@@ -35,6 +35,8 @@ def distance():
     distance = ((TimeElapsed * 34300) / 2)+0.2
     #print("DEBUG check the time : ",TimeElapsed)
     return distance
+
+
 """
 if __name__ == '__main__':
     try:

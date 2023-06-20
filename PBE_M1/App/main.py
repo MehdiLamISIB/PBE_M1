@@ -72,7 +72,6 @@ speakr.list_news=list_news
 """
     LISTE DES PINS UTILISER:
         20 & 21 ---> servo moteur
-        22 ---> photo-résistance
         2 (trigger) & 3 (echo) ---> Capteur ultrason
 
         les 2 5Volts
@@ -97,10 +96,19 @@ count_near=0
 
 
 def MainBehavior():
-    global name_user,speakr
+    global name_user,speakr,move_choice_user
     """
     Cette fonction permet d'économiser des ressources en évitant de faire tourner du programme dans le vide
     """
+    if(move_choice_user=="Sinus"):
+        servoMovement.ZigZagMove()
+    if(move_choice_user=="Cosinus"):
+        servoMovement.HelloMove()
+    if(move_choice_user=="Linéaire"):
+       servoMovement.OneOneMove()
+    servoMovement.CalibrationMove()
+
+
     while(hibernate_robot=="oui"):
         GetSet_data_user()
         print("le robot est en hibernation, vous devez l'activer dans le formulaire")
@@ -116,6 +124,7 @@ def ActivationBehavior(count_near,retrieve_data_delay):
     """
     Cette fonction attend que l'utilisateur vient pour activer le prochain niveau d'interaction
     """
+    print("enter here of course")
     rdelay=0
     isNearRobot=False
     while(not isNearRobot):
@@ -145,6 +154,7 @@ def ActivationBehavior(count_near,retrieve_data_delay):
 def TalkAndInteractBehavior():
     global speakr,servoMovement,servo,stop_robot,hibernate_robot,isAskedToStop,list_news
     print("le robot est en écoute -- vous êtes proche du robot")
+    speakr.servo=servoMovement;
     while True:
         if(name_user!=""):
             speakr.user_name=name_user

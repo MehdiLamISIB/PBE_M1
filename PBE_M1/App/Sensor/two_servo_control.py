@@ -75,7 +75,7 @@ def OneOneMove():
         TranslateMove(srv1,-1,1,0.1,0.05)
         TranslateMove(srv2,-1,1,0.1,0.05)
         i=i+1
-        #sleep(0.05)
+        sleep(0.2)
     srv1.detach()
     srv2.detach()
 
@@ -88,7 +88,22 @@ def ZigZagMove():
         TranslateMove(srv1,-1,1,0.5,0.05)
         TranslateMove(srv2,-1,1,0.5,0.05)
         i=i+1
+    #    sleep(0.5)
+        sleep(2)
     srv1.detach()
     srv2.detach()
 
-ZigZagMove()
+
+def CalibrationMove():
+    srv1.value=0
+    srv2.value=0
+    sleep(1)
+    srv1.detach()
+    srv2.detach()
+
+
+#ZigZagMove()
+
+#OneOneMove()
+
+CalibrationMove()
